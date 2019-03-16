@@ -1,0 +1,860 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Expires" content="Thu, 01 Jan 1980 00:00:00 GMT">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="Default-Style" content="compacto">
+<title>Portal del Estado Peruano</title>
+<link href="../estilos/pep_estilos.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" language="javascript" src="../funciones/pep_funciones.js"></script>
+<script type="text/javascript" language="javascript">
+var enablepersist="on" //Enable saving state of content structure using session cookies? (on/off)
+var collapseprevious="no" //Collapse previously open content when opening present? (yes/no)
+
+if (document.getElementById){
+document.write('<style type="text/css">')
+document.write('.switchcontent{display:none;}')
+document.write('</style>')
+}
+
+function getElementbyClass(classname){
+ccollect=new Array()
+var inc=0
+var alltags=document.all? document.all : document.getElementsByTagName("*")
+for (i=0; i<alltags.length; i++){
+if (alltags[i].className==classname)
+ccollect[inc++]=alltags[i]
+}
+}
+
+function contractcontent(omit){
+var inc=0
+while (ccollect[inc]){
+if (ccollect[inc].id!=omit)
+ccollect[inc].style.display="none"
+inc++
+}
+}
+
+function expandcontent(cid){
+if (typeof ccollect!="undefined"){
+if (collapseprevious=="yes")
+contractcontent(cid)
+document.getElementById(cid).style.display=(document.getElementById(cid).style.display!="block")? "block" : "none"
+}
+}
+
+function revivecontent(){
+contractcontent("omitnothing")
+selectedItem=getselectedItem()
+//selectedComponents=selectedItem.split("|")
+selectedComponents=""
+
+for (i=0; i<selectedComponents.length-1; i++)
+document.getElementById(selectedComponents[i]).style.display="block"
+}
+
+function get_cookie(Name) { 
+var search = Name + "="
+var returnvalue = "";
+if (document.cookie.length > 0) {
+offset = document.cookie.indexOf(search)
+if (offset != -1) { 
+offset += search.length
+end = document.cookie.indexOf(";", offset);
+if (end == -1) end = document.cookie.length;
+returnvalue=unescape(document.cookie.substring(offset, end))
+}
+}
+return returnvalue;
+}
+
+function getselectedItem(){
+if (get_cookie(window.location.pathname) != ""){
+selectedItem=get_cookie(window.location.pathname)
+return selectedItem
+}
+else
+return ""
+}
+
+function saveswitchstate(){
+var inc=0, selectedItem=""
+while (ccollect[inc]){
+if (ccollect[inc].style.display=="block")
+selectedItem+=ccollect[inc].id+"|"
+inc++
+}
+
+document.cookie=window.location.pathname+"="+selectedItem
+}
+
+function do_onload(){
+uniqueidn=window.location.pathname+"firsttimeload"
+getElementbyClass("switchcontent")
+if (enablepersist=="on" && typeof ccollect!="undefined"){
+document.cookie=(get_cookie(uniqueidn)=="")? uniqueidn+"=1" : uniqueidn+"=0" 
+firsttimeload=(get_cookie(uniqueidn)==1)? 1 : 0 //check if this is 1st page load
+if (!firsttimeload)
+revivecontent()
+}
+}
+
+
+if (window.addEventListener)
+window.addEventListener("load", do_onload, false)
+else if (window.attachEvent)
+window.attachEvent("onload", do_onload)
+else if (document.getElementById)
+window.onload=do_onload
+
+if (enablepersist=="on" && document.getElementById)
+window.onunload=saveswitchstate
+
+
+</script><style type="text/css">.switchcontent{display:none;}</style></head>
+
+<body bgcolor="#ffffff" topmargin="0" leftmargin="0">
+<table border="0" cellpadding="0" cellspacing="0" width="1000" align="center">
+  <tbody><tr>
+   <td>
+<link rel="shortcut icon" href="http://www.tramites.gob.pe/img/peru.ico">
+<table border="0" cellpadding="0" cellspacing="0" width="1000" align="center">
+  <tbody><tr>
+   <td><table align="left" border="0" cellpadding="0" cellspacing="0" width="1000">
+	  <tbody><tr>
+	   <td width="145" height="100" class="fondo_cabecera_1">&nbsp;</td>
+	   <td><table align="left" border="0" cellpadding="0" cellspacing="0" width="315">
+		  <tbody><tr>
+		   <td width="315" height="65" align="right" valign="bottom" class="fondo_cabecera_2"></td>
+		  </tr>
+		  <tr>
+		   <td width="315" height="35" class="fondo_cabecera_3"><span class="style1">"Decenio de la igualdad de oportunidades para mujeres y hombres"</span></td>		 
+		  </tr>
+		</tbody></table></td>
+	   <td width="75" height="100" class="fondo_cabecera_4">&nbsp;</td>
+	   <td><table align="left" border="0" cellpadding="0" cellspacing="0" width="465">
+		  <tbody><tr>
+		   <td><table align="left" border="0" cellpadding="0" cellspacing="0" width="465">
+			  <tbody><tr>
+			   <td width="145" height="40" class="fondo_cabecera_5">&nbsp;</td>
+			   <td><img src="../imagenes/cab_ico.jpg" name="cab_ico" width="270" height="40" border="0" usemap="#cab_icoMap" alt=""></td>
+			   <td width="50" height="40" class="fondo_cabecera_6">&nbsp;</td>
+			  </tr>
+			</tbody></table></td>
+		  </tr>
+		  <tr>
+		   <td><table align="left" border="0" cellpadding="0" cellspacing="0" width="465">
+			  <tbody><tr>
+			   <td><table align="left" border="0" cellpadding="0" cellspacing="0" width="360" class="style1">
+				  <tbody><tr>
+				   <td width="360" height="25" align="right" class="fondo_cabecera_7"><span class="style1"><script language="javascript" type="text/javascript">document.write(fechac());</script>26 Febrero 2019</span>&nbsp;
+UIT=S/.&nbsp;T.C: S/.  V: S/. </td>
+				  </tr>
+				  <tr>
+				   <td>
+                   <form action="../directorio/pep_directorio_ent_busq.asp" name="busqueda" method="post">
+                   	<table align="left" border="0" cellpadding="0" cellspacing="0" width="360">
+					  <tbody><tr>
+					   <td width="30" height="25" class="fondo_cabecera_8">&nbsp;</td>
+					   <td width="220" height="35" align="center" class="fondo_cabecera_3"> 
+					   <input class="style1" size="33" name="dsc_institucion" maxlength="30"></td>
+					   <td><img src="../imagenes/b_buscar.jpg" name="b_buscar" width="110" height="35" border="0" usemap="#b_buscarMap" alt=""></td>
+					  </tr>
+					</tbody></table>
+                   </form>
+                   </td>
+				  </tr>
+				</tbody></table></td>
+			   <td width="105" height="60" class="fondo_cabecera_9">&nbsp;</td>
+			  </tr>
+			</tbody></table></td>
+		  </tr>
+		</tbody></table></td>
+	  </tr>
+	</tbody></table></td>
+  </tr>
+  <tr>
+   <td><img src="../imagenes/img_cabecera.jpg" width="1000" height="200" border="0" usemap="#Map"></td>
+  </tr>
+</tbody></table>
+
+<map name="cab_icoMap" id="cab_icoMap">
+<!--<area shape="poly" coords="53,10,42,21,42,34,65,34,65,21,53,10" href="../contactenos/pep_contactenos.asp" target="_self" alt="Contáctenos"/>-->
+<area shape="poly" coords="17,10,6,21,6,34,29,34,29,21,17,10" href="http://www.peru.gob.pe" target="_self" alt="Página de inicio">
+<area shape="rect" coords="77,8,93,35" href="#" target="_self" alt="Celular">
+<area shape="circle" coords="119,21,14" href="#" target="_self" alt="Acerca del portal">
+<area shape="circle" coords="158,22,13" href="../map/pep_map_ubicacion.asp" target="_self" alt="Ubicación geográfica">
+<area shape="circle" coords="195,22,13" href="http://www.bcrp.gob.pe/billetes-y-monedas.html" target="_blank" alt="Moneda">
+<area shape="circle" coords="234,22,13" href="../clima/pep_clima.asp" target="_self" alt="Clima">
+</map>
+
+<map name="b_buscarMap" id="b_buscarMap">
+<area shape="rect" coords="8,9,61,25" href="javascript:buscar_entidad();" target="_self" alt="Buscar">
+</map>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="https://ssl.google-analytics.com/ga.js" type="text/javascript"></script>
+<map name="Map" id="Map">
+  <area shape="rect" coords="29,163,134,197" href="http://www.presidencia.gob.pe" target="_blank" alt="Presidencia de la República">
+  <area shape="rect" coords="152,163,289,195" href="http://www.pcm.gob.pe" target="_blank" alt="Presidencia del Consejo de Ministros">
+  <area shape="rect" coords="310,164,416,194" href="http://www.congreso.gob.pe" target="_blank" alt="Congreso de la República">
+  <area shape="rect" coords="451,163,553,194" href="http://www.pj.gob.pe" target="_blank" alt="Poder Judicial">
+  <area shape="rect" coords="601,162,678,193" href="http://www.peru.gob.pe/directorio/pep_directorio_poderes.asp" target="_blank" alt="Directorio del Estado">
+  <area shape="rect" coords="728,161,833,195" href="http://www.transparencia.gob.pe" target="_blank" alt="Portal de Transparencia Estándar">
+  <area shape="rect" coords="865,162,978,194" href="http://www.peru.gob.pe/normas/pep_normas.asp" target="_blank" alt="Normas Legales">
+</map>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-536807-2");
+pageTracker._trackPageview();
+} catch(err) {
+}
+</script>
+</td>
+  </tr>
+  <tr>
+   <td>
+      
+   <table border="0" cellpadding="0" cellspacing="0" width="1000" align="center">
+      <tbody><tr>
+       <td width="20">&nbsp;</td>
+       <td width="960" valign="top">
+       
+       <!-- Inicio Cuerpo -->
+       
+        <br>
+        
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="900" align="center">
+  <tbody><tr>
+   <td><table align="left" border="0" cellpadding="0" cellspacing="0" width="900">
+	  <tbody><tr>
+	   <td width="560" height="90" background="../imagenes/tit_ejecutivo.gif">&nbsp;</td>
+	   <td width="340" height="90" align="right">
+       
+        <a href="pep_directorio_poderes.asp" target="_top"><img src="../imagenes/fp.gif" width="8" height="9" border="0" alt=""><font face="Arial" color="D2400A" style="font-size:11px;">&nbsp;Regresar a página principal</font></a>
+       <br>
+       <a href="pep_directorio_listado_total.asp" target="_blank"><font face="arial" size="2" color="darkblue"><b>&nbsp;&nbsp;&nbsp;&nbsp;Generar cuadro excel</b></font></a>
+	  </td></tr>
+	</tbody></table></td>
+  </tr>
+  <tr>
+   <td><table align="left" border="0" cellpadding="0" cellspacing="0" width="900">
+	  <tbody><tr>
+	   <td width="60" height="43">&nbsp;</td>
+	   <td width="15" height="43" background="../imagenes/rec_bus_iz.jpg">&nbsp;</td>
+	   <td><table align="left" border="0" cellpadding="0" cellspacing="0" width="182">
+		  <tbody><tr>
+		   <td width="182" height="20" background="../imagenes/rec_bus_sup.jpg"><span class="style4">Búsqueda Directa </span></td>
+		  </tr>
+		  <tr>
+		   <td>
+            <form name="directorio" method="post" action="pep_directorio_ent_busq.asp" onsubmit="return false">
+                <input type="hidden" name="dsc_sector">
+                <input type="hidden" name="cod_poder">
+                <table align="left" border="0" cellpadding="0" cellspacing="0" width="182">
+                  <tbody><tr>
+                   <td width="168" height="23" background="../imagenes/rec_bus_inf.jpg"><input style="font-size: 11px; font-family: Verdana" size="24" name="dsc_institucion" maxlength="20"></td>
+                   <td><img src="../imagenes/ico_buscar.gif" alt="" name="ico_buscar" width="14" height="23" border="0" usemap="#ico_buscarMap"></td>
+                  </tr>
+                </tbody></table>
+			</form>            
+            </td>
+		  </tr>
+		</tbody></table></td>
+	   <td width="32" height="43" background="../imagenes/rec_bus_div.jpg">&nbsp;</td>
+	   <td><table align="left" border="0" cellpadding="0" cellspacing="0" width="596">
+		  <tbody><tr>
+		   <td width="596" height="20" background="../imagenes/rec_bus_sup.jpg" class="style4">Ver Listado de entidades por:</td>
+		  </tr>
+		  <tr>
+		   <td><table align="left" border="0" cellpadding="0" cellspacing="0" width="596">
+			  <tbody><tr>
+			   <td width="96" height="23" align="center" valign="baseline" class="fondo_menu_poderes_marcado"><a href="pep_directorio_poderes.asp?cod_poder=3"><font class="color_menu_poderes_marcado">Ejecutivo</font></a></td>
+			   <td width="4" height="23" background="../imagenes/rec_div_pod.gif">&nbsp;</td>
+			   <td width="96" height="23" align="center" valign="baseline" class="fondo_menu_poderes_normal"><a href="pep_directorio_poderes.asp?cod_poder=1"><font class="color_menu_poderes_normal">Legislativo</font></a></td>
+			   <td width="4" height="23" background="../imagenes/rec_div_pod.gif">&nbsp;</td>
+			   <td width="96" height="23" align="center" valign="baseline" class="fondo_menu_poderes_normal"><a href="pep_directorio_poderes.asp?cod_poder=2"><font class="color_menu_poderes_normal">Judicial</font></a></td>
+			   <td width="4" height="23" background="../imagenes/rec_div_pod.gif">&nbsp;</td>
+			   <td width="96" height="23" align="center" valign="baseline" class="fondo_menu_poderes_normal"><a href="pep_directorio_poderes.asp?cod_poder=4"><font class="color_menu_poderes_normal">O. Autónomos</font></a></td>
+			   <td width="4" height="23" background="../imagenes/rec_div_pod.gif">&nbsp;</td>
+			   <td width="96" height="23" align="center" valign="baseline" class="fondo_menu_poderes_normal"><a href="pep_directorio_poderes.asp?cod_poder=5"><font class="color_menu_poderes_normal">Gob. Locales</font></a></td>
+			   <td width="4" height="23" background="../imagenes/rec_div_pod.gif">&nbsp;</td>
+			   <td width="96" height="23" align="center" valign="baseline" class="fondo_menu_poderes_normal"><a href="pep_directorio_poderes.asp?cod_poder=7"><font class="color_menu_poderes_normal">G. Regionales</font></a></td>
+			  </tr>
+			</tbody></table></td>
+		  </tr>
+		</tbody></table></td>
+	   <td width="15" height="43" background="../imagenes/rec_bus_de.jpg">&nbsp;</td>
+	  </tr>
+	</tbody></table></td>
+  </tr>
+  <tr>
+   <td width="900" height="20">&nbsp;</td>
+  </tr>
+</tbody></table>
+
+<map name="ico_buscarMap">
+<area shape="rect" coords="0,4,14,18" href="javascript:valida_nombre();" target="_self" alt="Buscar">
+</map>
+        <table border="0" cellpadding="0" cellspacing="0" width="900" align="center">
+        <tbody><tr>
+            <td valign="top">
+       		
+            <!-- Mostrando Datos la entidad (poder y nombre)-->
+            <table border="0" cellspacing="0" cellpadding="0" width="600">
+            <tbody><tr>
+                <td align="right"><img src="../imagenes/flecha.gif" alt=""></td>
+                <td width="574" class="style1"><font size="2"><b>Poder Ejecutivo</b></font></td>
+            </tr>
+            <tr>
+                <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+                <td height="5">&nbsp;</td>
+                <td class="style1">
+				
+                <font color="#FF0000">La información presentada es administrada por:</font>
+                <br><br>
+                <table width="900" border="0" cellpadding="1" cellspacing="1" bgcolor="#000000">
+                  <tbody><tr bgcolor="#CCCCCC" align="center">
+                    <td><b>Nombres</b></td>
+                    <td><b>Cargo</b></td>
+                    <td><b>Correo</b></td>
+                    <td><b>Teléfono</b></td>
+                  </tr>
+                  
+                  <tr bgcolor="#FFFFFF">
+                    <td>Cabello Flores Juan William</td>
+                    <td>Profesional de la Unidad de Abastecimiento y Patrimonio</td>
+                    <td>jcabello@ana.gob.pe</td>
+                    <td>2243298 - 1561</td>
+                  </tr>
+                  
+                  <tr bgcolor="#FFFFFF">
+                    <td>Ruiz Carpio Katterine Fiorella</td>
+                    <td>Profesional de la Unidad de Recursos Humanos</td>
+                    <td>kruiz@ana.gob.pe</td>
+                    <td>2243298 - 1511</td>
+                  </tr>
+                  
+                  <tr bgcolor="#FFFFFF">
+                    <td>Sanchez Laura Ingrid</td>
+                    <td>Profesional de la Unidad de Contabilidad y Tesorería</td>
+                    <td>isanchez@ana.gob.pe</td>
+                    <td>2243298 - 1551</td>
+                  </tr>
+                  
+                  <tr bgcolor="#FFFFFF">
+                    <td>Verano Zelada Carlos Manuel</td>
+                    <td>Director de la Dirección del Sistema Nacional de Información de Recursos Hídricos</td>
+                    <td>cverano@ana.gob.pe</td>
+                    <td>2243298 - 1601</td>
+                  </tr>
+                  
+                </tbody></table>
+
+                  
+                
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td class="style1"><font size="2" color="#D2400A"><b>AUTORIDAD NACIONAL DEL AGUA</b></font></td>
+            </tr>
+            </tbody></table>
+            <!--**********************************************-->
+            <br>
+            <!-- Datos Generales -->
+            <table border="0" cellspacing="0" cellpadding="0" width="900" align="center">
+            
+                <tbody><tr class="style1">
+                	<td width="13"></td><td width="150"><b>Abreviatura:</b></td>
+                	<td width="294">ANA</td>
+                </tr>
+            
+                <tr class="style1">
+                 <td width="13"></td>
+                 <td width="150"><b>Sector:</b></td>
+                 <td width="294">AGRICULTURA</td>
+                </tr>
+            
+                <tr class="style1">
+                  <td width="13"></td>
+                  <td width="150" valign="top"><b>Dirección:</b></td>
+                  <td width="294">Calle Diecisiete Nº 355, Urb. El Palomar</td>
+                </tr>
+            
+                <tr class="style1">
+                 <td width="13"></td>
+                 <td width="150" valign="top"><b>Departamento:</b></td>
+                 <td width="294">LIMA</td>
+                </tr>
+            
+                <tr class="style1">
+                 <td width="13"></td>
+                 <td width="150" valign="top"><b>Provincia:</b></td>
+                 <td width="294">LIMA</td>
+                </tr>
+            
+                <tr class="style1">
+                 <td width="13"></td>
+                 <td width="150" valign="top"><b>Distrito:</b></td>
+                 <td width="294">SAN ISIDRO</td>
+                </tr>
+            
+                <tr class="style1">
+                 <td width="13"></td>
+                 <td width="150"><b>Teléfono:</b></td>
+                 <td width="294">224-3298</td>
+                </tr>
+            
+                <tr class="style1">
+                	<td width="13"></td>
+                	<td width="150"><b>Página Web:</b></td>
+                    <td width="294"><a href="http://www.ana.gob.pe" target="_blank">www.ana.gob.pe</a></td>
+                </tr>
+            
+                <tr class="style1">
+                 <td colspan="3">&nbsp;</td>
+                </tr>
+                <tr class="style1">
+                 <td width="13"></td>
+                 <td width="150" valign="top"><b>Misión:</b></td>
+                 <td width="537">Ejercer la rectoría técnica - normativa y establecer procedimientos para la gestión integrada, sostenible y multisectorial de los recursos hídricos en beneficio de los usuarios de agua y población en general, de manera oportuna y eficaz.</td>
+                </tr>
+            
+            </tbody></table>
+            <br>
+            <table border="0" cellspacing="0" cellpadding="0" width="900">
+            <tbody><tr>
+            <td>
+            <!--Instituciones dependientes (Sólo para ministerios) -->
+            
+            </td>
+            </tr>
+            </tbody></table>
+            <!--Oficinas Informáticas-->
+            <img src="../imagenes/areas.jpg" onclick="expandcontent('Unidades')" style="cursor:hand; cursor:pointer" alt="Unidades Informáticas">
+<div id="Unidades" class="switchcontent">
+<table border="0" width="900" cellspacing="0" cellpadding="0" class="style1">
+<tbody><tr>
+<td width="10" valign="top"><img src="../imagenes/f_4.gif" width="4" height="7" vspace="5"></td>
+<td width="567" valign="top"><a href="pep_directorio_detalle_institucion.asp?cod_institucion=13778">DIRECCION DEL SISTEMA NACIONAL DE INFORMACION DE RECURSOS HIDRICOS (DNIRH - ANA)</a></td>
+</tr>
+<tr><td colspan="2">&nbsp;</td></tr>
+</tbody></table>
+</div>
+            
+            <!--Funciones-->
+            <img src="../imagenes/funciones.jpg" onclick="expandcontent('Funciones')" style="cursor:hand; cursor:pointer" alt="">
+<div id="Funciones" class="switchcontent">
+<table border="0" width="900" cellspacing="0" cellpadding="0" class="style1">
+<tbody><tr>
+<td width="15" valign="top"><img src="../imagenes/f_4.gif" width="4" height="7" vspace="5" alt=""></td>
+<td width="880" valign="top"><p style="margin:0px" align="justify"> Elaborar la Política y Estrategia Nacional de Recursos Hídricos, el Plan Nacional de Recursos Hídricos, conduciendo, supervisando y evaluando su ejecución en el marco de la Política Nacional del Ambiente.
+</p></td>
+</tr>
+<tr><td colspan="2">&nbsp;</td></tr>
+<tr>
+<td width="15" valign="top"><img src="../imagenes/f_4.gif" width="4" height="7" vspace="5" alt=""></td>
+<td width="880" valign="top"><p style="margin:0px" align="justify"> Dictar normas y establecer los procedimientos para asegurar la gestión integrada y sostenible de los recursos hídricos, asimismo proponer las normas legales para la gestión del agua que requieran ser aprobadas por Decreto Supremo.</p></td>
+</tr>
+<tr><td colspan="2">&nbsp;</td></tr>
+<tr>
+<td width="15" valign="top"><img src="../imagenes/f_4.gif" width="4" height="7" vspace="5" alt=""></td>
+<td width="880" valign="top"><p style="margin:0px" align="justify"> Establecer los lineamientos para la formulación y actualización de los Planes de Gestión de Recursos Hídricos en las Cuencas, aprobarlos y supervisar su implementación.</p></td>
+</tr>
+<tr><td colspan="2">&nbsp;</td></tr>
+<tr>
+<td width="15" valign="top"><img src="../imagenes/f_4.gif" width="4" height="7" vspace="5" alt=""></td>
+<td width="880" valign="top"><p style="margin:0px" align="justify"> Elaborar el método y determinar el valor de las retribuciones económicas por el derecho de uso de agua y por el vertimiento de aguas residuales tratadas en fuentes naturales de agua; aprobar las tarifas por monitoreo y gestión de aguas subterráneas y por el uso de la infratestructura.</p></td>
+</tr>
+<tr><td colspan="2">&nbsp;</td></tr>
+<tr>
+<td width="15" valign="top"><img src="../imagenes/f_4.gif" width="4" height="7" vspace="5" alt=""></td>
+<td width="880" valign="top"><p style="margin:0px" align="justify"> Aprobar reservas de recursos hídricos y trasvases de agua de cuenca; declarar el agotamiento de las fuentes naturales de agua, zonas de veda, zonas de protección, zonas intangibles y estados de emergencia en las fuentes naturales de agua; dictando en cada caso las medidas pertinentes.</p></td>
+</tr>
+<tr><td colspan="2">&nbsp;</td></tr>
+<tr>
+<td width="15" valign="top"><img src="../imagenes/f_4.gif" width="4" height="7" vspace="5" alt=""></td>
+<td width="880" valign="top"><p style="margin:0px" align="justify"> Otorgar, modificar y extinguir, previo estudio técnico, derechos de uso de agua, autorizaciones de vertimientos y de reuso de agua residual; aprobando cuando sea necesario la implementación, modificación y extinción de  servidumbres de uso de agua.</p></td>
+</tr>
+<tr><td colspan="2">&nbsp;</td></tr>
+<tr>
+<td width="15" valign="top"><img src="../imagenes/f_4.gif" width="4" height="7" vspace="5" alt=""></td>
+<td width="880" valign="top"><p style="margin:0px" align="justify"> Conducir, organizar y administrar el Sistema Nacional de Información de Recursos Hídricos; el Registro Administrativo de Derechos de Uso de Agua; el Registro Nacional de Organizaciones de Usuarios; el Registro de Control de Vertimientos y los demás registros que correspondan.</p></td>
+</tr>
+<tr><td colspan="2">&nbsp;</td></tr>
+<tr>
+<td width="15" valign="top"><img src="../imagenes/f_4.gif" width="4" height="7" vspace="5" alt=""></td>
+<td width="880" valign="top"><p style="margin:0px" align="justify"> Emitir opinión técnica vinculante para: aprobación de instrumentos de gestión ambiental que involucren las fuentes naturales de agua; otorgamiento de autorizaciones extracción de material de acarreo; y, respecto a la disponibilidad de recursos hídricos para el otorgamiento de viabilidad de los proyectos de
+infraestructura hidráulica.</p></td>
+</tr>
+<tr><td colspan="2">&nbsp;</td></tr>
+<tr>
+<td width="15" valign="top"><img src="../imagenes/f_4.gif" width="4" height="7" vspace="5" alt=""></td>
+<td width="880" valign="top"><p style="margin:0px" align="justify"> Coordinar, organizar y dirigir acciones necesarias para el funcionamiento del Sistema Nacional de Gestión de Recursos Hidricos, así como supervisar y evaluar el impacto de las actividades y el cumplimiento de los objetivos de
+dicho Sistema.</p></td>
+</tr>
+<tr><td colspan="2">&nbsp;</td></tr>
+<tr>
+<td width="15" valign="top"><img src="../imagenes/f_4.gif" width="4" height="7" vspace="5" alt=""></td>
+<td width="880" valign="top"><p style="margin:0px" align="justify"> Ejercer jurisdicción administrativa exclusiva en materia de aguas, desarrollando acciones de administración, fiscalización, control y vigilancia, para asegurar la conservación y protección del agua, en cuanto a su cantidad y calidad, de los bienes naturales asociados a ésta y de la infraestructura hidráulica
+multisectorial; ejerciendo para tal efecto la facultad sancionadora y coactiva.</p></td>
+</tr>
+<tr><td colspan="2">&nbsp;</td></tr>
+<tr>
+<td width="15" valign="top"><img src="../imagenes/f_4.gif" width="4" height="7" vspace="5" alt=""></td>
+<td width="880" valign="top"><p style="margin:0px" align="justify"> Establecer los parámetros de eficiencia aplicables al aprovechamiento de los recursos hidricos, en concordancia con la Politica Nacional del Ambiente.</p></td>
+</tr>
+<tr><td colspan="2">&nbsp;</td></tr>
+<tr>
+<td width="15" valign="top"><img src="../imagenes/f_4.gif" width="4" height="7" vspace="5" alt=""></td>
+<td width="880" valign="top"><p style="margin:0px" align="justify">  Promover y apoyar la formulación de proyectos y la ejecución de actividades que promuevan el uso eficiente, el ahorro, la conservación, la protección de la calidad e incremento de la disponibilidad de los recursos hidricos y autorizar la ejecución de obras que se proyecten en los bienes naturales asociados al agua y en infraestructura hidráulica multisectorial.</p></td>
+</tr>
+<tr><td colspan="2">&nbsp;</td></tr>
+<tr>
+<td width="15" valign="top"><img src="../imagenes/f_4.gif" width="4" height="7" vspace="5" alt=""></td>
+<td width="880" valign="top"><p style="margin:0px" align="justify"> Desarrollar acciones para la gestión integrada del agua por cuencas y la preservación de los recursos en las cabeceras de cuencas, asi como para la prevención de daños por ocurrencia de eventos hidrológicos extremos.</p></td>
+</tr>
+<tr><td colspan="2">&nbsp;</td></tr>
+<tr>
+<td width="15" valign="top"><img src="../imagenes/f_4.gif" width="4" height="7" vspace="5" alt=""></td>
+<td width="880" valign="top"><p style="margin:0px" align="justify">  Aprobar la demarcación territorial de cuencas hidrográficas, la clasificación de
+los cuerpos de agua, la delimitación de las fajas marginales y los volúmenes de los caudales ecológicos, éstos últimos en coordinación con el Ministerio del Ambiente.</p></td>
+</tr>
+<tr><td colspan="2">&nbsp;</td></tr>
+<tr>
+<td width="15" valign="top"><img src="../imagenes/f_4.gif" width="4" height="7" vspace="5" alt=""></td>
+<td width="880" valign="top"><p style="margin:0px" align="justify"> Promover programas de educación difusión y sensibilización sobre la importancia del agua para la humanidad destinadas al establecimiento de una cultura del agua que reconozca el valor social, ambiental y económico de dicho recurso.</p></td>
+</tr>
+<tr><td colspan="2">&nbsp;</td></tr>
+<tr>
+<td width="15" valign="top"><img src="../imagenes/f_4.gif" width="4" height="7" vspace="5" alt=""></td>
+<td width="880" valign="top"><p style="margin:0px" align="justify"> Coordinar con el Ministerio de Relaciones Exteriores, la suscripción de acuerdos multinacionales que tengan por finalidad la gestión integrada de recursos hidricos en cuencas transfronterizas.</p></td>
+</tr>
+<tr><td colspan="2">&nbsp;</td></tr>
+<tr>
+<td width="15" valign="top"><img src="../imagenes/f_4.gif" width="4" height="7" vspace="5" alt=""></td>
+<td width="880" valign="top"><p style="margin:0px" align="justify"> Otras que señale la Ley.</p></td>
+</tr>
+<tr><td colspan="2">&nbsp;</td></tr>
+<tr><td colspan="2">&nbsp;</td></tr>
+</tbody></table>
+</div>
+            
+            <!--Funcionarios principales-->
+            <img src="../imagenes/funcionarios.jpg" onclick="expandcontent('Funcionarios')" style="cursor:hand; cursor:pointer">
+<div id="Funcionarios" class="switchcontent">
+<table border="0" width="900" cellspacing="0" cellpadding="0" class="style1">
+<tbody><tr><td height="5"></td></tr>
+<tr><td width="13"><img src="../imagenes/f_4.gif" width="4" height="7" alt=""></td>
+<td width="70"><b>Cargo:</b></td>
+<td>Jefe de la Autoridad Nacional del Agua</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="Javascript:DatosPersonales(24617,13705)"><img src="../imagenes/masdatos.jpg" border="0" alt=""></a></td>
+</tr>
+<tr><td>&nbsp;</td>
+<td width="70"><b>Nombre:</b></td>
+<td>Ing. Walter Obando Licera</td>
+</tr>
+<tr><td width="13"><img src="../imagenes/f_4.gif" width="4" height="7" alt=""></td>
+<td width="70"><b>Cargo:</b></td>
+<td>Gerente General</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="Javascript:DatosPersonales(56159,13705)"><img src="../imagenes/masdatos.jpg" border="0" alt=""></a></td>
+</tr>
+<tr><td>&nbsp;</td>
+<td width="70"><b>Nombre:</b></td>
+<td>Ing. Jorge Juan Ganoza Roncal</td>
+</tr>
+<tr><td width="13"><img src="../imagenes/f_4.gif" width="4" height="7" alt=""></td>
+<td width="70"><b>Cargo:</b></td>
+<td>Director(e) de la Dirección de Administración de Recursos Hidricos</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="Javascript:DatosPersonales(26498,13705)"><img src="../imagenes/masdatos.jpg" border="0" alt=""></a></td>
+</tr>
+<tr><td>&nbsp;</td>
+<td width="70"><b>Nombre:</b></td>
+<td>Ing. Alberto Antonio Alva Tiravanti</td>
+</tr>
+<tr><td width="13"><img src="../imagenes/f_4.gif" width="4" height="7" alt=""></td>
+<td width="70"><b>Cargo:</b></td>
+<td>Directora de la Dirección de Calidad y Evaluación de Recursos Hídricos</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="Javascript:DatosPersonales(26499,13705)"><img src="../imagenes/masdatos.jpg" border="0" alt=""></a></td>
+</tr>
+<tr><td>&nbsp;</td>
+<td width="70"><b>Nombre:</b></td>
+<td>Ing. Carmen Lourdes Yupanqui Zaa</td>
+</tr>
+<tr><td width="13"><img src="../imagenes/f_4.gif" width="4" height="7" alt=""></td>
+<td width="70"><b>Cargo:</b></td>
+<td>Directora de la Dirección de Organización de Usuarios de Agua</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="Javascript:DatosPersonales(51121,13705)"><img src="../imagenes/masdatos.jpg" border="0" alt=""></a></td>
+</tr>
+<tr><td>&nbsp;</td>
+<td width="70"><b>Nombre:</b></td>
+<td>Ing. Laura Silva Rojas</td>
+</tr>
+<tr><td width="13"><img src="../imagenes/f_4.gif" width="4" height="7" alt=""></td>
+<td width="70"><b>Cargo:</b></td>
+<td>Director de la Dirección de Planificación y Desarrollo de Recursos Hídricos</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="Javascript:DatosPersonales(32308,13705)"><img src="../imagenes/masdatos.jpg" border="0" alt=""></a></td>
+</tr>
+<tr><td>&nbsp;</td>
+<td width="70"><b>Nombre:</b></td>
+<td>Ing. Carlos Antonio Perleche Fuentes</td>
+</tr>
+<tr><td width="13"><img src="../imagenes/f_4.gif" width="4" height="7" alt=""></td>
+<td width="70"><b>Cargo:</b></td>
+<td>Directora de la Oficina de Asesoría Jurídica</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="Javascript:DatosPersonales(27347,13705)"><img src="../imagenes/masdatos.jpg" border="0" alt=""></a></td>
+</tr>
+<tr><td>&nbsp;</td>
+<td width="70"><b>Nombre:</b></td>
+<td>Abg. Jessica Villegas Vasquez</td>
+</tr>
+<tr><td width="13"><img src="../imagenes/f_4.gif" width="4" height="7" alt=""></td>
+<td width="70"><b>Cargo:</b></td>
+<td>Director de la Dirección del Sistema Nacional de Información de Recursos Hídricos</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="Javascript:DatosPersonales(25023,13705)"><img src="../imagenes/masdatos.jpg" border="0" alt=""></a></td>
+</tr>
+<tr><td>&nbsp;</td>
+<td width="70"><b>Nombre:</b></td>
+<td>Ing. Carlos Manuel Verano Zelada</td>
+</tr>
+<tr><td width="13"><img src="../imagenes/f_4.gif" width="4" height="7" alt=""></td>
+<td width="70"><b>Cargo:</b></td>
+<td>Director Ejecutivo del Proyecto de Modernización de la Gestión de los Recursos Hídricos</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="Javascript:DatosPersonales(27348,13705)"><img src="../imagenes/masdatos.jpg" border="0" alt=""></a></td>
+</tr>
+<tr><td>&nbsp;</td>
+<td width="70"><b>Nombre:</b></td>
+<td>Ing. Wilfredo Echevarria Suarez</td>
+</tr>
+<tr><td width="13"><img src="../imagenes/f_4.gif" width="4" height="7" alt=""></td>
+<td width="70"><b>Cargo:</b></td>
+<td>Director del Órgano de Control Institucional</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="Javascript:DatosPersonales(25025,13705)"><img src="../imagenes/masdatos.jpg" border="0" alt=""></a></td>
+</tr>
+<tr><td>&nbsp;</td>
+<td width="70"><b>Nombre:</b></td>
+<td>CPC. Elio A. García García</td>
+</tr>
+<tr><td width="13"><img src="../imagenes/f_4.gif" width="4" height="7" alt=""></td>
+<td width="70"><b>Cargo:</b></td>
+<td>Director de la Oficina de Planeamiento y Presupuesto</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="Javascript:DatosPersonales(31583,13705)"><img src="../imagenes/masdatos.jpg" border="0" alt=""></a></td>
+</tr>
+<tr><td>&nbsp;</td>
+<td width="70"><b>Nombre:</b></td>
+<td>CPCC. Johnny Cesar Cayo Saravia</td>
+</tr>
+<tr><td width="13"><img src="../imagenes/f_4.gif" width="4" height="7" alt=""></td>
+<td width="70"><b>Cargo:</b></td>
+<td>Subdirectora de la Unidad de Presupuesto</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="Javascript:DatosPersonales(51143,13705)"><img src="../imagenes/masdatos.jpg" border="0" alt=""></a></td>
+</tr>
+<tr><td>&nbsp;</td>
+<td width="70"><b>Nombre:</b></td>
+<td>Carmen Beatriz Noriega Casanova</td>
+</tr>
+<tr><td width="13"><img src="../imagenes/f_4.gif" width="4" height="7" alt=""></td>
+<td width="70"><b>Cargo:</b></td>
+<td>Sub Director de la Unidad de Coperación Internacional</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="Javascript:DatosPersonales(51162,13705)"><img src="../imagenes/masdatos.jpg" border="0" alt=""></a></td>
+</tr>
+<tr><td>&nbsp;</td>
+<td width="70"><b>Nombre:</b></td>
+<td>Lic. Guillermo José Carlos Avanzini Pinto</td>
+</tr>
+<tr><td width="13"><img src="../imagenes/f_4.gif" width="4" height="7" alt=""></td>
+<td width="70"><b>Cargo:</b></td>
+<td>Director de la Oficina de Administración</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="Javascript:DatosPersonales(56160,13705)"><img src="../imagenes/masdatos.jpg" border="0" alt=""></a></td>
+</tr>
+<tr><td>&nbsp;</td>
+<td width="70"><b>Nombre:</b></td>
+<td>Erlinda Graus Guevara</td>
+</tr>
+<tr><td width="13"><img src="../imagenes/f_4.gif" width="4" height="7" alt=""></td>
+<td width="70"><b>Cargo:</b></td>
+<td>Subdirectora de la Unidad de Planeamiento y Modernización</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="Javascript:DatosPersonales(51125,13705)"><img src="../imagenes/masdatos.jpg" border="0" alt=""></a></td>
+</tr>
+<tr><td>&nbsp;</td>
+<td width="70"><b>Nombre:</b></td>
+<td>Hellen Lévano Rojas</td>
+</tr>
+<tr><td width="13"><img src="../imagenes/f_4.gif" width="4" height="7" alt=""></td>
+<td width="70"><b>Cargo:</b></td>
+<td>Sub Director de la Unidad de Recursos Humanos</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="Javascript:DatosPersonales(44234,13705)"><img src="../imagenes/masdatos.jpg" border="0" alt=""></a></td>
+</tr>
+<tr><td>&nbsp;</td>
+<td width="70"><b>Nombre:</b></td>
+<td>Abg. Gino Sergio Macher Cappellin</td>
+</tr>
+<tr><td width="13"><img src="../imagenes/f_4.gif" width="4" height="7" alt=""></td>
+<td width="70"><b>Cargo:</b></td>
+<td>Sub Director de la Unidad de Archivo y Trámite Documentario</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="Javascript:DatosPersonales(50639,13705)"><img src="../imagenes/masdatos.jpg" border="0" alt=""></a></td>
+</tr>
+<tr><td>&nbsp;</td>
+<td width="70"><b>Nombre:</b></td>
+<td>Ing. Jorge Luis Hinostroza Perla</td>
+</tr>
+<tr><td width="13"><img src="../imagenes/f_4.gif" width="4" height="7" alt=""></td>
+<td width="70"><b>Cargo:</b></td>
+<td>Ejecutor Coactivo</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="Javascript:DatosPersonales(44233,13705)"><img src="../imagenes/masdatos.jpg" border="0" alt=""></a></td>
+</tr>
+<tr><td>&nbsp;</td>
+<td width="70"><b>Nombre:</b></td>
+<td>Gissely Mónica Granizo Valladares</td>
+</tr>
+<tr><td width="13"><img src="../imagenes/f_4.gif" width="4" height="7" alt=""></td>
+<td width="70"><b>Cargo:</b></td>
+<td>Sub Director de la Unidad de Contabilidad y Tesoreria</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="Javascript:DatosPersonales(56161,13705)"><img src="../imagenes/masdatos.jpg" border="0" alt=""></a></td>
+</tr>
+<tr><td>&nbsp;</td>
+<td width="70"><b>Nombre:</b></td>
+<td>CPC Alejandro  Santos Villanueva Pozo</td>
+</tr>
+<tr><td width="13"><img src="../imagenes/f_4.gif" width="4" height="7" alt=""></td>
+<td width="70"><b>Cargo:</b></td>
+<td>Unidad de Abastecimiento y Patrimonio</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="Javascript:DatosPersonales(52283,13705)"><img src="../imagenes/masdatos.jpg" border="0" alt=""></a></td>
+</tr>
+<tr><td>&nbsp;</td>
+<td width="70"><b>Nombre:</b></td>
+<td>German Sandoval Bonilla</td>
+</tr>
+<tr><td colspan="2">&nbsp;</td></tr>
+</tbody></table>
+</div>
+            </td></tr></tbody></table>
+            
+            
+           </td>
+          </tr>
+          </tbody></table>   
+            
+         </td>
+        </tr>
+        </tbody></table>
+
+       <!-- Fin Cuerpo -->
+       
+       
+       &nbsp;
+      
+   
+   
+   
+   
+  
+  
+   <table border="0" cellpadding="0" cellspacing="0" width="1000" align="center">
+  <tbody><tr>
+   <td width="20" height="260">&nbsp;</td>
+   <td><table align="left" border="0" cellpadding="0" cellspacing="0" width="960">
+	  <tbody><tr>
+	   <td width="960" height="60">&nbsp;</td>
+	  </tr>
+	  <tr>
+	   <td>
+       <!--
+       	<table align="left" border="0" cellpadding="0" cellspacing="0" width="960">
+		  <tr>
+		   <td><img name="pie_r2_c2" src="../imagenes/b_equivalencia.gif" width="120" height="50" border="0" alt=""/></td>
+		   <td width="20" height="50">&nbsp;</td>
+		   <td><img name="pie_r2_c5" src="../imagenes/b_licenciamiento.gif" width="120" height="50" border="0" alt=""/></td>
+		   <td width="20" height="50">&nbsp;</td>
+		   <td><img name="pie_r2_c7" src="../imagenes/b_poi2009.gif" width="120" height="50" border="0" alt=""/></td>
+		   <td width="20" height="50">&nbsp;</td>
+		   <td><img name="pie_r2_c9" src="../imagenes/b_psc.jpg" width="120" height="50" border="0" alt=""/></td>
+		   <td width="20" height="50">&nbsp;</td>
+		   <td><img name="pie_r2_c11" src="../imagenes/b_vii_enriap.gif" width="120" height="50" border="0" alt=""/></td>
+		   <td width="20" height="50">&nbsp;</td>
+		   <td><img name="pie_r2_c13" src="../imagenes/egoverment.jpg" width="120" height="50" border="0" alt=""/></td>
+		   <td width="20" height="50">&nbsp;</td>
+		   <td><img name="pie_r2_c16" src="../imagenes/b_licenciamiento.gif" width="120" height="50" border="0" alt=""/></td>
+		  </tr>
+		</table>
+        -->
+        </td>
+	  </tr>
+	  <tr>
+	   <td>&nbsp;</td>
+	  </tr>
+	  <tr>
+	   <td width="960" height="25" align="center" valign="middle" class="fondo_pie_1"><a href="http://www.presidencia.gob.pe" target="_blank"><font class="color_menu_pie">Presidencia</font></a> <font class="color_menu_pie">|</font> <a href="http://www.pcm.gob.pe/" target="_blank"><font class="color_menu_pie">PCM</font></a> <font class="color_menu_pie">|</font> <a href="http://www.congreso.gob.pe/" target="_blank"><font class="color_menu_pie">Congreso</font></a> <font class="color_menu_pie">|</font> <a href="http://www.pj.gob.pe/" target="_blank"><font class="color_menu_pie">Poder Judicial</font></a> <font class="color_menu_pie">|</font> <a href="../directorio/pep_directorio_poderes.asp"><font class="color_menu_pie">Directorio del Estado</font></a> <font class="color_menu_pie">|</font> <a href="../transparencia/pep_transparencia.asp"><font class="color_menu_pie">Transparencia de Gestión</font></a> <font class="color_menu_pie">|</font> <a href="../normas/pep_normas.asp"><font class="color_menu_pie">Normas Legales</font></a></td>
+	  </tr>
+	  <tr>
+	   <td width="960" height="20">&nbsp;</td>
+	  </tr>
+	  <tr>
+	   <td><table align="left" border="0" cellpadding="0" cellspacing="0" width="960">
+		  <tbody><tr>
+		   <td width="20" height="125" class="fondo_pie_2">&nbsp;</td>
+		   <td width="715" height="125" bgcolor="#ECECEC">
+			<table border="0">
+			<tbody><tr>
+				<td>
+					<span class="style2"><b>Presidencia del Consejo de Ministros - PCM</b><br>
+				     <b>Secretaría de Gobierno Digital - SeGDi</b><br><br><br><br>
+		             <!--Página Web:&nbsp;<a href="http://www.ongei.gob.pe" target="_blank"><span class="style2">www.ongei.gob.pe</span></a> <br/>
+				     Calle Francisco de Toledo 219 - Urbanización La Virreyna, Surco <br/>
+				     Teléfonos: 634 6000 - 219 7000 <br/>
+				     e-mail: ongei@pcm.gob.pe - portalpep@pcm.gob.pe / Nick Skype:ongeiongei-->
+		            </span>
+				</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>
+					<p>
+					    <a href="http://validator.w3.org/check?uri=referer">
+ 							<img src="../imagenes/valid_xhtml.png" border="0" alt="Valid XHTML 1.0 Transitional">
+						</a>
+<!-- BEGIN ProvideSupport.com Graphics Chat Button Code -->
+			</p><div id="ciHeUB" style="z-index:100;position:absolute"></div><div id="sdHeUB" style="display:none"><script type="text/javascript" src="https://image.providesupport.com/js/1mgnd4nbqhvkd0bjvzsmn7cd6r/safe-standard.js?ps_h=HeUB&amp;ps_t=1551236420116"></script></div><script type="text/javascript">			                                                                                                             var seHeUB = document.createElement("script"); seHeUB.type = "text/javascript"; var seHeUBs = (location.protocol.indexOf("https") == 0 ? "https" : "http") + "://image.providesupport.com/js/1mgnd4nbqhvkd0bjvzsmn7cd6r/safe-standard.js?ps_h=HeUB&ps_t=" + new Date().getTime(); setTimeout("seHeUB.src=seHeUBs;document.getElementById('sdHeUB').appendChild(seHeUB)", 1)</script>
+			<!-- END ProvideSupport.com Graphics Chat Button Code -->
+			  	    <p></p>
+				</td>
+				<td>&nbsp;</td>
+				<td>
+					<p>
+					<a href="http://jigsaw.w3.org/css-validator/check/referer">
+					     <img src="../imagenes/vcss_blue.gif" border="0" alt="CSS Válido">
+					</a>
+					</p>
+
+				</td>
+
+			</tr>
+			</tbody></table>
+		   </td>
+		   <td width="205" height="125" bgcolor="#ECECEC"><!-- class="fondo_pie_3"--><!-- <img src="http://www.gobiernodigital.gob.pe/dist/images/peru__logo.png" width="220" height="65" border="0" alt="" /><!--&nbsp;<img src="../imagenes/logo_ongei_mouse.gif" border="0" alt="" />--></td>
+		   <td width="20" height="125" class="fondo_pie_4">&nbsp;</td>
+		  </tr>
+		</tbody></table></td>
+	  </tr>
+	</tbody></table></td>
+   <td width="20" height="260">&nbsp;</td>
+  </tr>
+</tbody></table>
+
+  
+
+
+
+
+</body></html>

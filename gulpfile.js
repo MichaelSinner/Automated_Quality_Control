@@ -3,6 +3,7 @@ var webserver = require('gulp-webserver');
 var opn = require('opn');
 var  phantom  =  require("gulp-phantom");
 var casperJs = require('gulp-casperjs');
+var fs = require("fs");
 
 var csslint = require('gulp-csslint');
 var jslint = require('gulp-jslint');
